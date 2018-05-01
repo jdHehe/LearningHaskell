@@ -1,5 +1,5 @@
 # 从本章开始进入haskell的学习
-##Haskell是一种函数式编程语言，曾写过scala对这类贬称模式很有兴趣，于是开始学习Haskell，并记录这个过程，希望为有需要的同学提供帮助
+## Haskell是一种函数式编程语言，曾写过scala对这类贬称模式很有兴趣，于是开始学习Haskell，并记录这个过程，希望为有需要的同学提供帮助
 
 首先需要安装环境，下载安装包 [download](https://www.haskell.org/platform/)。安装完毕后，进入命令行键入ghci，然后可以看到如下的界面，
 ```
@@ -11,9 +11,9 @@ Prelude>
 ```
 你可以设置自己喜欢的名称 `:set prompt "youname> "`。
 
-###Haskell语言初识
+### Haskell语言初识
 
-####算术运算和布尔运算
+#### 算术运算和布尔运算
 下图所示，是haskell中的基本运算的方式
 ```
 Prelude> 100*100
@@ -38,7 +38,7 @@ False
 
 haskell内置了一些基本算子，例如succ、min、max等，haskell的函数调用方式与c系语言不同，haskell不是以()作为函数调用的标志，而是用空格，例如`succ 8`就是以8为参数调用succ函数。再如，如果我们需要用8*9的结果作为参数调用succ函数，我们需要这么写`succ (8*9)`而不是`succ 8*9`这里 () 起到了运算优先级的作用。
 
-####自定义函数
+#### 自定义函数
 如上，是我们如何调用已有的函数。现在我们将试着定义我们自己的函数。
 ``` haskell
 Prelude>  doubleMe x = x*2
@@ -60,15 +60,15 @@ Haskell是一种命令式编程语言(imperative language)，Haskell中的每一
 #### lists介绍
 在Haskell中list是最常使用的数据结构。 Haskell中list也是同质的数据结构，它存储着多个相同类型的元素，也就是说我们不可以有一个list既有int又有string
 
-#####list定义和操作
-######定义
+##### list定义和操作
+###### 定义
 ```
 Prelude> let numbers=[1,2]
 Prelude> str = "123"
 ```
 正如你所见，我们定义了两个list，一个包含int的1,2的numbers，另一个包含字符的str（string也是一种list）。
 
-######list融合
+###### list融合
 ```
 Prelude> [1,2,3,4] ++ [9,10,11,12]
 [1,2,3,4,9,10,11,12]
@@ -90,7 +90,7 @@ Prelude> b ++ [1]
     ? When checking the inferred type
         it :: forall a. (Num [a], Num a) => [[a]]
 ```
-#####操作list的算子
+##### 操作list的算子
 利用操作符`!!` 选取list b的下标为2的
 ```
 Prelude> b !! 2
@@ -123,7 +123,7 @@ Prelude> b !! 2
 `elem`: 判断元素是否在list中
 
 
-#####利用range操作生成list
+##### 利用range操作生成list
 如果我想要产生1到20的list，如何可以便利的产生呢？如果我想要指定间距呢？同理如果A-Z的字母呢？如下：
 ```
 Prelude> [1..20]
@@ -145,7 +145,7 @@ Prelude> take 10 (repeat 5)
 [5,5,5,5,5,5,5,5,5,5]
 ```
 
-####list 推演 (list comprehension)
+#### list 推演 (list comprehension)
 利用表达式表达list的产生逻辑，并通过表达式产生list。
 
 如果我们想要获得头十个自然偶数，我们可以采用`take 10 [2,4..]`， 当然我们也可以可以采用list comprehension的形式，我们可以从`[1..10]`获得元素，然后对每个元素*2变成偶数
@@ -172,10 +172,10 @@ Prelude>
 Prelude> boomBangs x
 ["BOOM!","BOOM!","BANG!","BANG!"]
 ```
-####Tuple 二元组
+#### Tuple 二元组
 当我们需要从编译期就确定list的某些类型时，如下的两种方式的区别就会显现出来了`[[1,2],[8,11],[4,5]]`和`[(1,2),(8,11),(4,5)]`后者采用了Tuple的方式组织数据，确保了这种数据形式不会被打破。
 
-#####tuple的操作函数
+##### tuple的操作函数
 `fst`: tuple的第一个元素
 `snd`: 第二个元素
 `zip`: 组合两个list产生tuple的list形式
