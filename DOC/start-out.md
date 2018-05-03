@@ -1,5 +1,5 @@
 # 从本章开始进入haskell的学习
-## Haskell是一种函数式编程语言，曾写过scala对这类贬称模式很有兴趣，于是开始学习Haskell，并记录这个过程，希望为有需要的同学提供帮助
+## Haskell是一种函数式编程语言，曾写过scala对这类编程模式很有兴趣，于是开始学习Haskell，并记录这个过程，希望为有需要的同学提供帮助
 
 首先需要安装环境，下载安装包 [download](https://www.haskell.org/platform/)。安装完毕后，进入命令行键入ghci，然后可以看到如下的界面，
 ```
